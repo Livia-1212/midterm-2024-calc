@@ -30,6 +30,24 @@ class App:
         settings = {key: value for key, value in os.environ.items()}
         logging.info("Environment variables loaded.")
         return settings
+    
+    def load_plugins(self):
+        """Dynamically load all plugins from the app.plugins package."""
+        plugins_package = 'app.plugins'
+        plugins_path = plugins_package.replace('.', '/')
+        if not os.path.exists(plugins_path):
+            logging.warning(f"Plugins directory '{plugins_path}' not found.")
+            return
+
+        for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_path]):
+            if is_pkg:
+                try:
+                    plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
+                    self.register_plugin_commands(plugin_module, plugin_name)
+                except ImportError as e:
+                    logging.error(f"Error importing plugin {plugin_name}: {e}")
+
+
 
     def register_all_commands(self):
         """Register and execute commands from all plugins."""
@@ -52,29 +70,6 @@ class App:
         self.command_handler.execute_command("greet")  # Execute GreetCommand
         self.command_handler.execute_command("data")   # Execute DataCommand
 
-    def load_plugins(self):
-        """Dynamically load all plugins from the app.plugins package."""
-        plugins_package = 'app.plugins'
-        plugins_path = plugins_package.replace('.', '/')
-        if not os.path.exists(plugins_path):
-            logging.warning(f"Plugins directory '{plugins_path}' not found.")
-            return
-
-        for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_path]):
-            if is_pkg:
-                try:
-                    plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
-                    self.register_plugin_commands(plugin_module, plugin_name)
-                except ImportError as e:
-                    logging.error(f"Error importing plugin {plugin_name}: {e}")
-
-    def register_plugin_commands(self, plugin_module, plugin_name):
-        """Register commands from a plugin module."""
-        if hasattr(plugin_module, 'register_commands'):
-            register_func = getattr(plugin_module, 'register_commands')
-            register_func(self.command_handler, self.calculator)
-            logging.info(f"Commands from plugin '{plugin_name}' registered.")
-
     def repl(self):
         """Command-line REPL interface for interacting with the app."""
         operations = {
@@ -87,7 +82,8 @@ class App:
             'mode': 'Calculate mode',
             'standard_deviation': 'Calculate standard deviation',
             'greet': 'Greet the user',
-            'data': 'Show data structure examples'
+            'data': 'Show data structure examples',
+            'reset': 'Reset the calculator value to 0 (history remains)'  # Include reset command
         }
 
         # Display initial welcome message and instructions
@@ -96,6 +92,7 @@ class App:
         for command, description in operations.items():
             print(f"  - {command}: {description}")
         print("\nℹ️  Example: To add 5, type 'add 5'.")
+        print("ℹ️  Use 'reset' to restart the calculation but keep the log history.")
         print("Type 'exit' to quit and view the summary.\n")
 
         while True:
@@ -115,11 +112,17 @@ class App:
 
                 # Split command and value (e.g., "add 5")
                 parts = command_input.split()
-                if len(parts) < 2 and command_input != "greet" and command_input != "data":
+                command_name = parts[0]
+
+                if command_name == "reset":
+                    self.calculator.reset()  # Reset calculator value
+                    print("✅ Calculator value reset to 0. History remains intact.")
+                    continue
+
+                if len(parts) < 2 and command_name not in ["greet", "data"]:
                     print("❌ Error: Please enter a command followed by a value.")
                     continue
 
-                command_name = parts[0]
                 value = float(parts[1]) if len(parts) > 1 else None
 
                 if command_name in self.command_handler.commands:
