@@ -44,24 +44,45 @@ Midterm-2024-Calc\
 > app \
 >> commands \
 >>> init.py \
+
 >> plugins \
->>> calc \
->>>> init.py \ 
->>> data \
->>>> init.py 
->>> greet \
+>>> plugins/calc \
 >>>> init.py \
->>> logging_config \
+
+>>> plugins/data \
 >>>> init.py \
->> init.py \
+
+>>> plugins/greet \
+>>>> init.py \
+
+>>> plugins/logging_config \
+>>>> init.py \
+
+>>> plugins/mean \
+>>>> init.py
+
+>>> plugins/median \
+>>>> init.py
+
+>>> plugins/mode \
+>>>> init.py
+
+>>> plugins/standard_deviation \
+>>>> init.py
+
+>> app/init.py \
+
 > data \
->> gpt_states.csv \
->> states.csv \
+>> data/gpt_states.csv \
+>> data/states.csv \
+
 > tests \
->> init.py \
->> conftest.py \
->> test_app.py \
->> test_plugin_greet.py \
+>> tests/init.py \
+>> tests/conftest.py \
+>> tests/test_app.py \
+>> tests/test_plugin_greet.py \
+
+
 >  main.py \
 > README.md \
 > requirements.txt \
