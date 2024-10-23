@@ -1,78 +1,62 @@
 import logging
+import os
 from app.commands import Command
 
-
 class DataCommand(Command):
+    def __init__(self, calculator):
+        self.calculator = calculator
+
     def execute(self):
-        # Demonstrating Lists
-        my_list = ['apple', 'banana', 'cherry']
-        logging.info(f'List example: {my_list}')
-        # Lists are ordered and mutable, making them ideal for storing a collection of items that may change over time.
-        logging.info(f'I pick an {my_list[0]}')
-        my_list.append('date')  # Adding an item to the list
-        logging.info(f'List after adding an item: {my_list}')
+        categories = ('assignment', 'project', 'midterm', 'finals')
+        classes = ['class1', 'class2']
+        all_grades = {}  # To store grades by class
+        grades_list = []  # To store overall grades as list
 
-        # Demonstrating Tuples
-        my_tuple = (1, 2, 3, 4)
-        logging.info(f'Tuple example: {my_tuple}')
-        # Tuples are ordered and immutable, suitable for storing a collection of items that should not change.
-        logging.debug(f'My Tuple is {my_tuple[0]}')
-        # Demonstrating Sets
-        my_set = {1, 2, 3, 4}
-        my_set2 = {2,3,4,5}
-        logging.info(f'Set example: {my_set}')
-        logging.info(f'whats different {my_set.difference(my_set2)}')
-        # Sets are unordered, mutable, and do not allow duplicate values, ideal for unique collection without specific order.
-        
-        my_set.add(5)  # Adding an item to the set
-        logging.info(f'Set after adding an item: {my_set}')
-        
-        # Demonstrating Dictionaries
-        states_abbreviations = {
-            'CA': 'California',
-            'NJ': 'New Jersey',
-            'TX': 'Texas',
-            'FL': 'Florida',
-            'IL': 'Illinois'
-        }
-        
-        logging.info(f'Dictionary example: {states_abbreviations}')
-        # Dictionaries store data in key-value pairs. They are mutable and unordered. Ideal for fast lookups where each value is associated with a unique key.
-        
-        states_abbreviations['NY'] = 'New York'  # Adding a new key-value pair
-        logging.info(f'Dictionary after adding a state: {states_abbreviations}')
-        
-        # Demonstrating dictionary iteration
-        for abbreviation, full_name in states_abbreviations.items():
-            logging.info(f"State Abbreviation: {abbreviation} for: {full_name}")
+        print("\n📊 Enter grades for each category and class.")
 
-        # Advanced use case: Nested Dictionaries
-        states_info = {
-            'CA': {
-                'capital': 'Sacramento',
-                'population': 39538223,  # As of the latest estimates
-                'great': 'No'
-            },
-            'TX': {
-                'capital': 'Austin',
-                'population': 29145505,  # As of the latest estimates
-                'great': 'Yes'
-            },
-            'NJ': {
-                'capital': 'Trenton',
-                'population': 50,  # As of the latest estimates
-                'great': 'Yes',
-                'good hot dogs': 'yes',
-                'where': 'Rutts hutt'
-            }
-        }
-        for state, info in states_info.items():
-            # Log the state abbreviation
-            logging.info(f"State: {state}")
-            print(f"State: {state}")
+        # Collect grades for each class
+        for cls in classes:
+            grades_tuple = []  # Tuple for current class
+            print(f"\n📚 Entering grades for {cls}:")
+
+            # Collect grades for each category in the current class
+            for category in categories:
+                while True:
+                    try:
+                        grade = float(input(f"Enter {category} grade: "))
+                        grades_tuple.append(grade)
+                        break
+                    except ValueError:
+                        print("❌ Error: Please enter a valid number.")
+
+            # Convert to tuple and store in list and dictionary
+            grades_tuple = tuple(grades_tuple)
+            grades_list.extend(grades_tuple)
+            all_grades[cls] = grades_tuple
+
+        # Log collected grades
+        logging.info(f"Grades List: {grades_list}")
+        logging.info(f"Grades by Class: {all_grades}")
+        print(f"\n✅ Grades collected:\nList: {grades_list}\nClasses: {all_grades}")
+
+        # Update calculator values
+        self.calculator.values.extend(grades_list)
+
+        # Save grades to CSV
+        self.export_grades_to_csv(grades_list)
+
+        print("\n📊 You can now use 'mean', 'median', or 'standard_deviation' commands on the collected grades.")
+
+    def export_grades_to_csv(self, grades_list):
+        import pandas as pd
+        data_dir = './data'
         
-            # Iterate through each property of the state and print/log it
-            for property_name, property_value in info.items():
-                property_info = f"    {property_name.capitalize()}: {property_value}"
-                print(property_info)
-                logging.info(property_info)
+        if not os.path.exists(data_dir):
+            os.makedirs(data_dir)
+            logging.info(f"The directory '{data_dir}' was created.")
+
+        csv_file_path = os.path.join(data_dir, 'grades_export.csv')
+        df_grades = pd.DataFrame(grades_list, columns=['Grade'])
+        df_grades.to_csv(csv_file_path, index=False)
+        logging.info(f"Grades saved to CSV at '{csv_file_path}'.")
+        print(f"\n📁 Grades saved to '{csv_file_path}'.")

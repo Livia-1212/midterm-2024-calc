@@ -1,0 +1,8 @@
+Operation,Value,Result
+add,4.0,4.0
+add,334.0,338.0
+subtract,54.0,284.0
+divide,4.0,71.0
+divide,23.0,3.0869565217391304
+multiply,3.0,9.26086956521739
+mean,,51.666666666666664

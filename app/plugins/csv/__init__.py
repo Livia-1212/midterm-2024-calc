@@ -3,54 +3,40 @@ import os
 from app.commands import Command
 import pandas as pd
 
-
 class CsvCommand(Command):
-    def execute(self):
-        
-        # Existing code for demonstrating data structures and saving CSV...
+    def __init__(self, calculator):
+        self.calculator = calculator
 
-        # Ensure the 'data' directory exists and is writable
+    def execute(self):
         data_dir = './data'
         if not os.path.exists(data_dir):
             os.makedirs(data_dir)
-            logging.info(f"The directory '{data_dir}' is created")
-
+            logging.info(f"The directory '{data_dir}' was created.")
         elif not os.access(data_dir, os.W_OK):
             logging.error(f"The directory '{data_dir}' is not writable.")
             return
-        
-        # Convert dictionary to DataFrame and save to CSV
-        states_abbreviations = {
-            'CA': 'California',
-            'NJ': 'New Jersey',
-            'TX': 'Texas',
-            'FL': 'Florida',
-            'IL': 'Illinois',
-            'NY': 'New York'  # Newly added state
+
+        # Example dictionary for grades (updated content)
+        grades_dict = {
+            'class1_assignment': 85,
+            'class1_project': 90,
+            'class1_midterm': 78,
+            'class1_final': 88,
+            'class2_assignment': 82,
+            'class2_project': 89,
+            'class2_midterm': 76,
+            'class2_final': 92
         }
-        df_states = pd.DataFrame(list(states_abbreviations.items()), columns=['Abbreviation', 'State'])
-        csv_file_path = os.path.join(data_dir, 'states.csv')
-        df_states.to_csv(csv_file_path, index=False)
-        
-        logging.info(f"States saved to CSV at '{csv_file_path}'.")
-        # This is creating the path for saving the file.
-        csv_file_path = os.path.join(data_dir, 'gpt_states.csv')
-        logging.info(f'the relative path  to save my file is {csv_file_path}')
-        # Read the CSV file back into a DataFrame
-        absolute_path = os.path.abspath(csv_file_path)
-        logging.info(f'the absolute path  to save my file is {absolute_path}')
-        df_read_states = pd.read_csv(csv_file_path)
-        
-        # Print and log each state nicely
-        print("States from CSV:")
-        for index, row in df_read_states.iterrows():
-            # First, print and log the complete record for the state
-            state_info = f"{row['State Abbreviation']}: {row['State Name']}"
-            print(f"Record {index}: {state_info}")
-            logging.info(f"Record {index}: {state_info}")
-            
-            # Then, iterate through each field in the row to print and log
-            for field in row.index:
-                field_info = f"    {field}: {row[field]}"
-                print(field_info)
-                logging.info(f"Index: {index}, {field_info}")
+
+        # Convert dictionary to DataFrame and save to CSV
+        df_grades = pd.DataFrame(list(grades_dict.items()), columns=['Category', 'Grade'])
+        csv_file_path = os.path.join(data_dir, 'grades_export.csv')
+        df_grades.to_csv(csv_file_path, index=False)
+        logging.info(f"Grades saved to CSV at '{csv_file_path}'.")
+
+        # Only update calculator if grades are found
+        if not df_grades.empty:
+            self.calculator.values.extend(df_grades['Grade'].tolist())
+            print("\n📊 Added grades from CSV for statistical calculations. Use 'mean', 'median', or 'standard_deviation' to analyze.")
+        else:
+            logging.warning("No grades found to add to the calculator.")

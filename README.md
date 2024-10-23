@@ -48,9 +48,13 @@ Midterm-2024-Calc\
 >> plugins \
 >>> plugins/calc \
 >>>> init.py \
+>>>> calculator.py
 
 >>> plugins/data \
 >>>> init.py \
+
+>>> plugins/csv \
+>>>> init.py
 
 >>> plugins/greet \
 >>>> init.py \
@@ -73,8 +77,10 @@ Midterm-2024-Calc\
 >> app/init.py \
 
 > data \
->> data/gpt_states.csv \
->> data/states.csv \
+>> data/gpt_states.csv 
+>> data/states.csv 
+>> data/calculation_history.csv
+>> data/states.csv
 
 > tests \
 >> tests/init.py \
@@ -87,3 +93,23 @@ Midterm-2024-Calc\
 > README.md \
 > requirements.txt \
 > .gitignore
+
+
+
+### 📝 **Explanation**
+- **app**: Contains the main application logic, commands, and plugins for dynamic operations.
+- **app/plugins**: Contains modular plugins like `calc`, `data`, `mean`, etc., which encapsulate specific functionalities.
+- **data**: Stores CSV files for operation history and other data.
+- **tests**: Contains test files for ensuring application correctness and stability.
+- **main.py**: Entry point of the application.
+- **README.md**: Documentation of the project.
+- **requirements.txt**: Lists project dependencies.
+
+## Setup Instructions
+1. Clone the repository: git clone https://github.com/Livia-1212/midterm-2024-calc.git
+2. Navigate to the project directory: cd Midterm-2024-Calc
+3. Install the dependencies: pip install -r requirements.txt
+4. Run the application: python3 main.py
+
+## License
+This project is licensed under the MIT License.
