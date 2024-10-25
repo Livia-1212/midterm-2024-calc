@@ -16,7 +16,7 @@ def test_command_registration(app_instance):
     assert "median" in commands
     assert "mode" in commands
     assert "standard_deviation" in commands
-    assert "data" in commands
+    assert "grades" in commands
     assert "greet" in commands
     assert "csv" in commands
 
