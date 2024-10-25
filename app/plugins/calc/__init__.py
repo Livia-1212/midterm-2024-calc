@@ -1,4 +1,3 @@
-from .calculator import Calculator
 from app.commands import Command
 
 # Command classes for calculator operations

@@ -1,6 +1,4 @@
 import os
-import pkgutil
-import importlib
 import logging
 import pandas as pd
 from dotenv import load_dotenv
@@ -18,16 +16,21 @@ from app.plugins.csv import CsvCommand
 
 class App:
     def __init__(self):
+        # Ensure logging is configured based on environment variables
         os.makedirs('logs', exist_ok=True)
         configure_logging()
         load_dotenv()
+
+        # Load environment variables
         self.settings = self.load_environment_variables()
         self.settings.setdefault('ENVIRONMENT', 'PRODUCTION')
+
+        # Initialize CommandHandler, Calculator, and history DataFrame
         self.command_handler = CommandHandler()
         self.calculator = Calculator()
-        self.history = pd.DataFrame(columns=["Operation", "Value", "Result"])  # Initialize empty DataFrame
+        self.history = pd.DataFrame(columns=["Operation", "Value", "Result"])
 
-        # Register commands from all plugins
+        # Register all commands
         self.register_all_commands()
 
     def load_environment_variables(self):
@@ -37,26 +40,22 @@ class App:
         return settings
 
     def register_all_commands(self):
-        """Register and execute commands from all plugins."""
-        # Register Calculator Commands
+        """Register commands from all plugins."""
+        # Register calculator commands
         self.command_handler.register_command("add", AddCommand(self.calculator, 0))
         self.command_handler.register_command("subtract", SubtractCommand(self.calculator, 0))
         self.command_handler.register_command("multiply", MultiplyCommand(self.calculator, 0))
         self.command_handler.register_command("divide", DivideCommand(self.calculator, 0))
 
-        # Register Statistical Commands
+        # Register statistical commands
         self.command_handler.register_command("mean", MeanCommand(self.calculator))
         self.command_handler.register_command("median", MedianCommand(self.calculator))
         self.command_handler.register_command("mode", ModeCommand(self.calculator))
         self.command_handler.register_command("standard_deviation", StandardDeviationCommand(self.calculator))
 
-        # Register DataCommand with calculator argument
+        # Register other commands
         self.command_handler.register_command("data", DataCommand(self.calculator))
-
-        # Register GreetCommand
         self.command_handler.register_command("greet", GreetCommand())
-
-        # Register CsvCommand
         self.command_handler.register_command("csv", CsvCommand(self.calculator))
 
         logging.info("All commands registered.")
@@ -88,17 +87,18 @@ class App:
             try:
                 command_input = input(">>> ").strip().lower()
 
-                if command_input in ['exit', 'reset', 'grades']:
+                if command_input in ['exit', 'reset']:
                     self.handle_special_commands(command_input)
                     if command_input == 'exit':
                         break
                     continue
 
-                # Split command and value (e.g., "add 5")
                 parts = command_input.split()
                 command_name = parts[0]
 
-                if len(parts) < 2 and command_name not in ["greet", "mean", "median", "mode", "standard_deviation", "csv"]:
+                if len(parts) < 2 and command_name not in [
+                    "greet", "data", "mean", "median", "mode", "standard_deviation", "csv"]:
+                    logging.warning("Invalid command format or missing value.")
                     print("❌ Error: Please enter a command followed by a value.")
                     continue
 
@@ -108,55 +108,53 @@ class App:
                     if value is not None:
                         self.calculator.add_value(value)
                         self.command_handler.commands[command_name].value = value
+
                     result = self.command_handler.execute_command(command_name)
 
                     if result is not None:
-                        # Create a new entry DataFrame
-                        new_entry = pd.DataFrame([{
-                            "Operation": command_name,
-                            "Value": value,
-                            "Result": result
-                        }])
+                        self.update_history(command_name, value, result)
 
-                        # Concatenate only if the new_entry is not empty
-                        if not new_entry.isna().all().all():
-                            if not self.history.empty:
-                                self.history = pd.concat([self.history, new_entry], ignore_index=True)
-                            else:
-                                self.history = new_entry
-
-                        # Custom output for 'mean'
                         if command_name == "mean":
                             print(f"✅ The mean of the total scores from class 1 and class 2 is: {result}")
                         else:
                             print(f"✅ Result: {result}")
                 else:
+                    logging.error(f"Unknown command: {command_name}")
                     print(f"❌ Error: Unknown command '{command_name}'.")
 
             except Exception as e:
+                logging.error(f"An unexpected error occurred: {e}")
                 print(f"❌ An unexpected error occurred: {e}")
 
     def handle_special_commands(self, command_name):
-        """Handle special commands like reset, exit, and grades."""
+        """Handle special commands like reset and exit."""
         if command_name == "reset":
             self.calculator.reset()
+            logging.info("Calculator value reset to 0.")
             print("✅ Calculator value reset to 0. History remains intact.")
         elif command_name == "exit":
-            print("\n📁 Grades saved to './data/grades_export.csv'.")
             self.save_history()
-            print("\n👋 Exiting REPL. Calculator Summary:")
-            print(self.history)
-        elif command_name == "grades":
-            self.command_handler.execute_command("data")
+
+    def update_history(self, operation, value, result):
+        """Update the operation history DataFrame."""
+        new_entry = pd.DataFrame([{
+            "Operation": operation,
+            "Value": value,
+            "Result": result
+        }])
+
+        if not new_entry.isna().all().all():
+            self.history = pd.concat([self.history, new_entry], ignore_index=True)
 
     def save_history(self):
-        """Save calculation history to a CSV file."""
-        csv_path = "./data/grades_export.csv"
-        if not self.history.empty:
-            self.history.to_csv(csv_path, index=False)
-            print(f"\n📁 Grades saved to '{csv_path}'.")
-        else:
-            print("\n📁 No grades to save.")
+        """Save calculation history to a CSV file using Pandas."""
+        csv_path = './data/grades_export.csv'
+
+        # Use Pandas for efficient data writing
+        self.history.to_csv(csv_path, index=False)
+
+        logging.info(f"Grades saved to CSV at '{csv_path}'.")
+        print(f"\n📁 Grades saved to '{csv_path}'.")
 
     def start(self):
         """Start the application."""

@@ -1,0 +1,90 @@
+2024-10-25 09:44:20,130 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 09:44:20,130 - INFO - Environment variables loaded.
+2024-10-25 09:44:20,132 - INFO - All commands registered.
+2024-10-25 09:44:20,132 - INFO - Application started. Type 'exit' to exit.
+2024-10-25 09:44:47,727 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 09:45:03,470 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:03:51,141 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:03:51,141 - INFO - Environment variables loaded.
+2024-10-25 10:03:51,143 - INFO - All commands registered.
+2024-10-25 10:03:51,206 - INFO - Calculator value reset to 0.
+2024-10-25 10:03:51,212 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:03:51,213 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:03:51,213 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:06:10,836 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:06:10,837 - INFO - Environment variables loaded.
+2024-10-25 10:06:10,839 - INFO - All commands registered.
+2024-10-25 10:06:10,941 - INFO - Calculator value reset to 0.
+2024-10-25 10:06:10,953 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:06:10,954 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:06:10,954 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:08:46,612 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:08:46,613 - INFO - Environment variables loaded.
+2024-10-25 10:08:46,614 - INFO - All commands registered.
+2024-10-25 10:08:46,678 - INFO - Calculator value reset to 0.
+2024-10-25 10:08:46,683 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:08:46,684 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:08:46,684 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:10:23,771 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:10:23,772 - INFO - Environment variables loaded.
+2024-10-25 10:10:23,773 - INFO - All commands registered.
+2024-10-25 10:10:23,862 - INFO - Calculator value reset to 0.
+2024-10-25 10:10:23,867 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:10:23,868 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:10:23,868 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:12:56,105 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:12:56,105 - INFO - Environment variables loaded.
+2024-10-25 10:12:56,108 - INFO - All commands registered.
+2024-10-25 10:12:56,175 - INFO - Calculator value reset to 0.
+2024-10-25 10:12:56,181 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:12:56,181 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:12:56,182 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:21:41,751 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:21:41,752 - INFO - Environment variables loaded.
+2024-10-25 10:21:41,755 - INFO - All commands registered.
+2024-10-25 10:21:41,827 - INFO - Calculator value reset to 0.
+2024-10-25 10:21:41,832 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:21:41,833 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:21:41,833 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:28:53,487 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:28:53,488 - INFO - Environment variables loaded.
+2024-10-25 10:28:53,490 - INFO - All commands registered.
+2024-10-25 10:28:53,554 - INFO - Calculator value reset to 0.
+2024-10-25 10:28:53,559 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:28:53,560 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:28:53,560 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:32:02,472 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:32:02,473 - INFO - Environment variables loaded.
+2024-10-25 10:32:02,474 - INFO - All commands registered.
+2024-10-25 10:32:02,544 - INFO - Calculator value reset to 0.
+2024-10-25 10:32:02,549 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:32:02,550 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:32:02,550 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:33:24,627 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:33:24,627 - INFO - Environment variables loaded.
+2024-10-25 10:33:24,629 - INFO - All commands registered.
+2024-10-25 10:33:24,632 - INFO - Calculator value reset to 0.
+2024-10-25 10:33:24,637 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:33:24,638 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:33:24,639 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:33:42,399 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:33:42,399 - INFO - Environment variables loaded.
+2024-10-25 10:33:42,401 - INFO - All commands registered.
+2024-10-25 10:33:42,405 - INFO - Calculator value reset to 0.
+2024-10-25 10:33:42,410 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:33:42,411 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:33:42,411 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:36:29,316 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:36:29,317 - INFO - Environment variables loaded.
+2024-10-25 10:36:29,319 - INFO - All commands registered.
+2024-10-25 10:36:29,322 - INFO - Calculator value reset to 0.
+2024-10-25 10:36:29,327 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:36:29,328 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:36:29,328 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:36:35,938 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 10:36:35,939 - INFO - Environment variables loaded.
+2024-10-25 10:36:35,940 - INFO - All commands registered.
+2024-10-25 10:36:35,944 - INFO - Calculator value reset to 0.
+2024-10-25 10:36:35,950 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 10:36:35,952 - INFO - Hello, this is a calculator with statistical operations!
+2024-10-25 10:36:35,953 - INFO - Hello, this is a calculator with statistical operations!
