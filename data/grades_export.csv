@@ -1,1 +1,9 @@
 Operation,Value,Result
+add,24.0,24.0
+add,89.0,113.0
+subtract,35.0,78.0
+divide,2.0,39.0
+multiply,88.0,3432.0
+mean,,192.0
+median,,89.0
+standard_deviation,,314.89

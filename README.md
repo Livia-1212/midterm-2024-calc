@@ -6,6 +6,9 @@
   - [Command Design Pattern](#command-design-pattern)
   - [Dynamic Plugin Loading](#dynamic-plugin-loading)
   - [Pandas for History Management](#pandas-for-history-management)
+- [Environment Variables](#environment-variables)
+- [Logging System](#logging-system)
+- [Exception Handling](#exception-handling)
 - [Project Structure](#project-structure)
 - [Setup Instructions](#setup-instructions)
 - [Usage](#usage)
@@ -26,18 +29,52 @@ The **Command Design Pattern** is employed as the core architectural design of t
 - **Extensibility**: New commands can be easily added without altering existing code. This adheres to the **Open-Closed Principle**, a key principle of SOLID design.
 - **Command Management**: Commands are registered in a `CommandHandler`, which manages their execution, ensuring a consistent interface for invoking commands.
 - **Undo Functionality**: Although not implemented here, the command pattern can be extended to include an "undo" mechanism, making it flexible for future enhancements.
+  - **[View Implementation](app/__init__.py)**
 
 ### Dynamic Plugin Loading
 The project also employs **dynamic plugin loading** to scan and import available plugins at runtime using the `pkgutil` and `importlib` modules. This approach provides:
 - **Modularity**: Each plugin resides in its own folder under the `app/plugins` directory, making it easy to manage and extend.
 - **Ease of Maintenance**: Plugins can be added or modified independently without affecting the main application logic.
 - **Automatic Registration**: The `App` class automatically discovers and registers commands from each plugin, promoting clean code separation and loose coupling.
+  - **[View Implementation](app/__init__.py)**
 
 ### Pandas for History Management
 The project uses **Pandas** for efficient management of the calculator’s operation history. The benefits include:
 - **Structured Storage**: The history of operations is stored in a Pandas DataFrame, providing a structured way to manage and analyze the data.
 - **Persistence**: The operation history is saved to a CSV file when the user exits the REPL, enabling data persistence across sessions.
 - **Data Analysis**: Pandas makes it easy to implement statistical commands (mean, median, etc.) and analyze operation history in a straightforward manner.
+  - **[View Implementation](app/__init__.py)**
+
+## Environment Variables
+- **Overview**: 
+  - Environment variables are used for dynamic configuration, including logging levels, file paths, and API keys.
+  - The `.env` file is read using the **dotenv** package, ensuring configurations can be modified without altering source code.
+- **Key Variables**:
+  - `ENVIRONMENT`: Defines the environment mode (e.g., DEVELOPMENT, PRODUCTION).
+  - `LOG_LEVEL`: Controls the logging level (e.g., DEBUG, INFO, ERROR).
+  - `LOG_FILE`: Defines the output file for logging.
+- **[View Environment Variable Handling](app/__init__.py)**
+
+## Logging System
+- **Overview**:
+  - The project has a comprehensive logging system set up in `app/plugins/logging_config/__init__.py`. 
+  - It differentiates log messages by severity (INFO, WARNING, ERROR) for effective monitoring and debugging.
+  - Logs include detailed information about each operation, potential errors, and successful executions.
+- **Configuration**:
+  - The logging configuration is dynamically driven by environment variables, allowing runtime adjustments.
+  - Logs are saved to a file (`app.log`) and can also be printed to the console.
+- **[View Logging Configuration](app/plugins/logging_config/__init__.py)**
+
+## Exception Handling
+- **LBYL (Look Before You Leap)**:
+  - This approach is used to check conditions before attempting operations, ensuring safer execution paths.
+  - Example: In `CsvCommand`, the directory is checked for existence and write access before saving files.
+  - **[View LBYL Implementation](app/plugins/csv/__init__.py)**
+  
+- **EAFP (Easier to Ask for Forgiveness than Permission)**:
+  - The REPL interface employs exception handling around user inputs and commands to allow for graceful error recovery.
+  - Example: Command execution is wrapped in `try/except` blocks to handle invalid commands or values.
+  - **[View EAFP Implementation](app/__init__.py)**
 
 ## Project Structure
 Midterm-2024-Calc\
@@ -80,7 +117,7 @@ Midterm-2024-Calc\
 >> data/gpt_states.csv 
 >> data/states.csv 
 >> data/calculation_history.csv
->> data/states.csv
+>> data/grades_export.csv
 
 > tests \
 >> tests/init.py \
@@ -95,7 +132,6 @@ Midterm-2024-Calc\
 > .gitignore
 
 
-
 ### 📝 **Explanation**
 - **app**: Contains the main application logic, commands, and plugins for dynamic operations.
 - **app/plugins**: Contains modular plugins like `calc`, `data`, `mean`, etc., which encapsulate specific functionalities.
@@ -104,6 +140,8 @@ Midterm-2024-Calc\
 - **main.py**: Entry point of the application.
 - **README.md**: Documentation of the project.
 - **requirements.txt**: Lists project dependencies.
+
+
 
 ## Setup Instructions
 1. Clone the repository: git clone https://github.com/Livia-1212/midterm-2024-calc.git
