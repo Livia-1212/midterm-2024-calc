@@ -20,8 +20,8 @@
 
 ## Introduction
 This project is a command-line calculator with support for basic arithmetic and statistical operations. It is designed with modularity and flexibility in mind, using the **Command Design Pattern** to allow for dynamic loading of plugins and easy addition of new commands. The application tracks the history of operations using **Pandas** and allows users to reset the calculator while preserving the history.
-I created a demo video for you to quickly understand how this project works:
-https://drive.google.com/file/d/1mUsw_5e2pIm4705ZAfwc_xYjsTY7zfj4/view?usp=drive_link
+I created a demo video for you to quickly understand how this project works: 
+https://drive.google.com/drive/folders/11Eu47vZPrZythos3tNjwn0EOfTtl-3oP?usp=drive_link
 
 ## Design Pattern Rationale
 
