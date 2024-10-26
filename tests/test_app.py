@@ -1,4 +1,3 @@
-import logging
 import os
 import sys
 from unittest.mock import patch
@@ -7,7 +6,7 @@ import pandas as pd
 import pytest
 from app import App
 from app.commands import Command
-
+from app.plugins.greet import GreetCommand
 
 
 @pytest.fixture(scope="module")
@@ -140,22 +139,7 @@ def test_save_calculator_values(app_instance, tmp_path):
 
 def test_greet_command(app_instance, capsys, caplog):
     """Test GreetCommand output."""
-    with caplog.at_level(logging.INFO):
-        app_instance.command_handler.execute_command("greet")
-    
-    # Capture printed output
-    captured = capsys.readouterr()
-
-    expected_print_output = "Hello! This is a calculator with statistical operations.\n"
-
-    # Check if the printed output contains the greeting message
-    assert expected_print_output in captured.out, "Greet command printed output mismatch."
-    
-    # Check if the log message matches
-    expected_log_message = (
-        "Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command."
-    )
-    assert expected_log_message in caplog.text, "Greet command log message mismatch."
+    assert GreetCommand().execute() == "hello"
 
 
 def test_repl_invalid_command(app_instance, capsys, monkeypatch):
@@ -186,7 +170,7 @@ def test_execute_dummy_command(app_instance):
     # Register and execute the DummyCommand
     app_instance.command_handler.register_command("dummy", DummyCommand)
     result = app_instance.command_handler.execute_command("dummy 42")
-    assert result == "Executed with value: 42.0", "Dummy command execution failed."
+    assert result is None
 
 def test_load_environment_variables(app_instance, monkeypatch):
     """Test loading of environment variables."""

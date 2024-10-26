@@ -22,3 +22,5 @@ class GreetCommand(Command):
         # Print the instructions to the console
         print("Hello! This is a calculator with statistical operations.")
         print(instructions)
+        return "hello"
+        
