@@ -1,3 +1,4 @@
+import logging
 import numpy as np
 from app.commands import Command
 
@@ -9,9 +10,9 @@ class StandardDeviationCommand(Command):
         if not self.calculator.values:
             print("⚠️ No values added yet. Cannot calculate standard deviation.")
             return None
-        std_dev = np.std(self.calculator.values)
-        print(f"📊 Standard Deviation: {std_dev}")
-        return std_dev
 
-def register_commands(command_handler, calculator):
-    command_handler.register_command("standard_deviation", StandardDeviationCommand(calculator))
+        std_dev = np.std(self.calculator.values)
+        std_dev_rounded = round(std_dev, 2)  # Round to 2 decimal places
+
+        print(f"📊 Standard Deviation: {std_dev_rounded}")
+        return std_dev_rounded

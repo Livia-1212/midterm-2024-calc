@@ -1,32 +1,40 @@
+# app/plugins/calc/calculator.py
+
 class Calculator:
     def __init__(self):
         self.value = 0
-        self.values = []
+        self.values = []  # Initialize an empty list to store grades
 
-    def add(self, value):
-        self.value += value
-        self.values.append(value)
-        return self.value
+    def add_value(self, num):
+        """
+        Add a value to the current total and to the list of values.
+        """
+        self.value += num
+        self.values.append(num)
 
-    def subtract(self, value):
-        self.value -= value
-        return self.value
+    def subtract_value(self, num):
+        """
+        Subtract a value from the current total.
+        """
+        self.value -= num
 
-    def multiply(self, value):
-        self.value *= value
-        return self.value
+    def multiply_value(self, num):
+        """
+        Multiply the current total by a given number.
+        """
+        self.value *= num
 
-    def divide(self, value):
-        if value == 0:
-            print("Error: Division by zero")
-            return None
-        self.value /= value
-        return self.value
+    def divide_value(self, num):
+        """
+        Divide the current total by a given number.
+        """
+        if num == 0:
+            return "Error: Division by zero"
+        self.value /= num
 
     def reset(self):
+        """
+        Reset the calculator's value and clear stored values.
+        """
         self.value = 0
-        return self.value
-
-    def add_value(self, value):
-        """Add value for statistical calculations."""
-        self.values.append(value)
+        self.values.clear()

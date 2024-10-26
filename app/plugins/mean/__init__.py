@@ -10,8 +10,6 @@ class MeanCommand(Command):
             print("⚠️ No values added yet. Cannot calculate mean.")
             return None
         mean_value = np.mean(self.calculator.values)
+        mean_value = round(mean_value, 2)  # Round to 2 decimal places
         print(f"📊 Mean: {mean_value}")
         return mean_value
-
-def register_commands(command_handler, calculator):
-    command_handler.register_command("mean", MeanCommand(calculator))

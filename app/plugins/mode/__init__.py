@@ -1,4 +1,5 @@
-from scipy import stats
+# app/plugins/mode/__init__.py
+import numpy as np
 from app.commands import Command
 
 class ModeCommand(Command):
@@ -9,10 +10,15 @@ class ModeCommand(Command):
         if not self.calculator.values:
             print("⚠️ No values added yet. Cannot calculate mode.")
             return None
-        mode_result = stats.mode(self.calculator.values, keepdims=True)
-        mode_value = mode_result.mode[0]
-        print(f"📊 Mode: {mode_value}")
-        return mode_value
+
+        # Calculate mode using numpy
+        mode_result = np.unique(self.calculator.values, return_counts=True)
+        mode_values, counts = mode_result
+        max_count = np.max(counts)
+        modes = mode_values[counts == max_count]
+
+        # Ensure the return is always a list
+        return modes.tolist()
 
 def register_commands(command_handler, calculator):
     command_handler.register_command("mode", ModeCommand(calculator))

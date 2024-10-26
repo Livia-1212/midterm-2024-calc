@@ -10,8 +10,6 @@ class MedianCommand(Command):
             print("⚠️ No values added yet. Cannot calculate median.")
             return None
         median_value = np.median(self.calculator.values)
+        median_value = round(median_value, 2)  # Round to 2 decimal places
         print(f"📊 Median: {median_value}")
         return median_value
-
-def register_commands(command_handler, calculator):
-    command_handler.register_command("median", MedianCommand(calculator))

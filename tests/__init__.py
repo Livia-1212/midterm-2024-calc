@@ -1,5 +1,4 @@
 import subprocess
-import pytest
 
 def pytest_sessionstart(session):
     """Runs at the start of the pytest session."""
