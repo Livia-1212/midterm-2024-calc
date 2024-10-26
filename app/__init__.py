@@ -94,7 +94,7 @@ class App:
                 command_input = input(">>> ").strip()
 
                 # Exit command handling
-                if command_input == 'exit':
+                if command_input == 'exit' or command_input == 'reset':
                     self.handle_special_commands(command_input)
                     break
 

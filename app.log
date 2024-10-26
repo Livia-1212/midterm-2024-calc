@@ -1095,3 +1095,18 @@
 2024-10-25 23:33:07,784 - INFO - Application started. Type 'exit' to exit.
 2024-10-25 23:34:32,727 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
 2024-10-25 23:34:32,728 - INFO - Exiting REPL.
+2024-10-25 23:44:54,027 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 23:44:54,027 - INFO - Environment variables loaded.
+2024-10-25 23:44:54,028 - INFO - All commands registered.
+2024-10-25 23:44:54,028 - INFO - Application started. Type 'exit' to exit.
+2024-10-25 23:46:24,356 - INFO - Exiting REPL.
+2024-10-25 23:46:27,769 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 23:46:27,789 - INFO - Environment variables loaded.
+2024-10-25 23:46:27,790 - INFO - All commands registered.
+2024-10-25 23:46:27,790 - INFO - Application started. Type 'exit' to exit.
+2024-10-25 23:46:29,633 - INFO - Exiting REPL.
+2024-10-25 23:47:25,505 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 23:47:25,506 - INFO - Environment variables loaded.
+2024-10-25 23:47:25,507 - INFO - All commands registered.
+2024-10-25 23:47:25,507 - INFO - Application started. Type 'exit' to exit.
+2024-10-25 23:47:33,506 - INFO - Calculator value reset to 0.
