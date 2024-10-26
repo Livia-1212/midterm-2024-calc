@@ -1,4 +1,5 @@
 # app/plugins/reset/__init__.py
+
 from app.commands import Command
 
 class ResetCommand(Command):
@@ -7,5 +8,5 @@ class ResetCommand(Command):
 
     def execute(self):
         """Reset the calculator's value to 0."""
-        self.calculator.value = 0
-        return "Calculator reset to 0."
+        self.calculator.reset()
+        return 0  # Return 0 after reset

@@ -179,11 +179,22 @@ def test_execute_dummy_command(app_instance):
     result = app_instance.command_handler.execute_command("dummy 42")
     assert result == "Executed with value: 42.0", "Dummy command execution failed."
 
-def test_load_environment_variables(app_instance):
+def test_load_environment_variables(app_instance, monkeypatch):
     """Test loading of environment variables."""
+    # Mock the environment variables
+    monkeypatch.setenv('ENVIRONMENT', 'DEVELOPMENT')
+    monkeypatch.setenv('LOG_LEVEL', 'DEBUG')
+
+    # Load the environment variables in the app instance
     env_vars = app_instance.load_environment_variables()
+
+    # Check if 'ENVIRONMENT' is loaded correctly
     assert 'ENVIRONMENT' in env_vars, "ENVIRONMENT variable not loaded."
-    assert env_vars.get('LOG_LEVEL') is not None, "LOG_LEVEL not set correctly."
+    assert env_vars.get('ENVIRONMENT') == 'DEVELOPMENT', "ENVIRONMENT not set to 'DEVELOPMENT'."
+    
+    # Check if 'LOG_LEVEL' is loaded correctly
+    assert env_vars.get('LOG_LEVEL') == 'DEBUG', "LOG_LEVEL not set to 'DEBUG'."
+
 
 
 def test_command_registration(app_instance):

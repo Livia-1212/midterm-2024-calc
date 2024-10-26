@@ -10,7 +10,8 @@ load-plugins=pylint_django
 disable= unused-argument,
          line-too-long,
          redefined-outer-name,
-         missing-module-docstring
+         missing-module-docstring,
+         trailing-whitespace
 
 
 [REPORTS]

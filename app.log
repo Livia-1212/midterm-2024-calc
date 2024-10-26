@@ -435,3 +435,207 @@
 2024-10-25 22:36:36,353 - INFO - The directory './data' was created.
 2024-10-25 22:36:36,353 - INFO - Grades saved to CSV at './data/grades_export.csv'.
 2024-10-25 22:36:36,355 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:37:49,643 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:37:49,644 - INFO - Environment variables loaded.
+2024-10-25 22:37:49,647 - INFO - All commands registered.
+2024-10-25 22:37:49,651 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:37:49,651 - INFO - Exiting REPL.
+2024-10-25 22:37:49,653 - INFO - Calculator value reset to 0.
+2024-10-25 22:37:49,654 - INFO - Exiting REPL.
+2024-10-25 22:37:49,725 - INFO - Calculator values saved to CSV at '/private/var/folders/p2/lcgk9hsj0830znmk7mjn_hvm0000gn/T/pytest-of-liviali/pytest-132/test_save_calculator_values0/test_calc_values_export.csv'.
+2024-10-25 22:37:49,729 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:37:49,731 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:37:49,731 - INFO - Exiting REPL.
+2024-10-25 22:37:49,736 - INFO - Environment variables loaded.
+2024-10-25 22:37:49,744 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:37:49,744 - INFO - Environment variables loaded.
+2024-10-25 22:37:49,745 - INFO - All commands registered.
+2024-10-25 22:37:49,745 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:37:49,758 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:37:49,759 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:37:49,765 - INFO - The directory './data' was created.
+2024-10-25 22:37:49,767 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:37:49,770 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:37:49,774 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:37:49,774 - WARNING - No grades found to add to the calculator.
+2024-10-25 22:37:49,775 - INFO - The directory './data' was created.
+2024-10-25 22:37:49,776 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:37:49,777 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:38:11,695 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:38:11,696 - INFO - Environment variables loaded.
+2024-10-25 22:38:11,698 - INFO - All commands registered.
+2024-10-25 22:38:11,698 - INFO - Application started. Type 'exit' to exit.
+2024-10-25 22:38:31,886 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:38:31,887 - INFO - Exiting REPL.
+2024-10-25 22:40:25,361 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:40:25,362 - INFO - Environment variables loaded.
+2024-10-25 22:40:25,363 - INFO - All commands registered.
+2024-10-25 22:40:25,363 - INFO - Application started. Type 'exit' to exit.
+2024-10-25 22:44:01,772 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:44:39,429 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:44:39,429 - INFO - Exiting REPL.
+2024-10-25 22:45:24,409 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:45:24,410 - INFO - Environment variables loaded.
+2024-10-25 22:45:24,411 - INFO - All commands registered.
+2024-10-25 22:45:24,413 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:24,413 - INFO - Exiting REPL.
+2024-10-25 22:45:24,414 - INFO - Calculator value reset to 0.
+2024-10-25 22:45:24,414 - INFO - Exiting REPL.
+2024-10-25 22:45:24,473 - INFO - Calculator values saved to CSV at '/private/var/folders/p2/lcgk9hsj0830znmk7mjn_hvm0000gn/T/pytest-of-liviali/pytest-133/test_save_calculator_values0/test_calc_values_export.csv'.
+2024-10-25 22:45:24,475 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:45:24,476 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:24,476 - INFO - Exiting REPL.
+2024-10-25 22:45:24,481 - INFO - Environment variables loaded.
+2024-10-25 22:45:24,484 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:45:24,484 - INFO - Environment variables loaded.
+2024-10-25 22:45:24,484 - INFO - All commands registered.
+2024-10-25 22:45:24,485 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:24,491 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:45:24,492 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:45:24,496 - INFO - The directory './data' was created.
+2024-10-25 22:45:24,497 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:24,500 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:24,502 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:24,502 - WARNING - No grades found to add to the calculator.
+2024-10-25 22:45:24,502 - INFO - The directory './data' was created.
+2024-10-25 22:45:24,503 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:24,504 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:34,002 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:45:34,002 - INFO - Environment variables loaded.
+2024-10-25 22:45:34,003 - INFO - All commands registered.
+2024-10-25 22:45:34,005 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:34,006 - INFO - Exiting REPL.
+2024-10-25 22:45:34,007 - INFO - Calculator value reset to 0.
+2024-10-25 22:45:34,008 - INFO - Exiting REPL.
+2024-10-25 22:45:34,070 - INFO - Calculator values saved to CSV at '/private/var/folders/p2/lcgk9hsj0830znmk7mjn_hvm0000gn/T/pytest-of-liviali/pytest-134/test_save_calculator_values0/test_calc_values_export.csv'.
+2024-10-25 22:45:34,071 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:45:34,072 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:34,072 - INFO - Exiting REPL.
+2024-10-25 22:45:34,076 - INFO - Environment variables loaded.
+2024-10-25 22:45:34,080 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:45:34,081 - INFO - Environment variables loaded.
+2024-10-25 22:45:34,081 - INFO - All commands registered.
+2024-10-25 22:45:34,081 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:34,090 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:45:34,090 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:45:34,093 - INFO - The directory './data' was created.
+2024-10-25 22:45:34,094 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:34,096 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:34,099 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:34,099 - WARNING - No grades found to add to the calculator.
+2024-10-25 22:45:34,100 - INFO - The directory './data' was created.
+2024-10-25 22:45:34,100 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:34,102 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:45,138 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:45:45,139 - INFO - Environment variables loaded.
+2024-10-25 22:45:45,141 - INFO - All commands registered.
+2024-10-25 22:45:45,145 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:45,145 - INFO - Exiting REPL.
+2024-10-25 22:45:45,148 - INFO - Calculator value reset to 0.
+2024-10-25 22:45:45,149 - INFO - Exiting REPL.
+2024-10-25 22:45:45,221 - INFO - Calculator values saved to CSV at '/private/var/folders/p2/lcgk9hsj0830znmk7mjn_hvm0000gn/T/pytest-of-liviali/pytest-135/test_save_calculator_values0/test_calc_values_export.csv'.
+2024-10-25 22:45:45,224 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:45:45,226 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:45,226 - INFO - Exiting REPL.
+2024-10-25 22:45:45,234 - INFO - Environment variables loaded.
+2024-10-25 22:45:45,243 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:45:45,243 - INFO - Environment variables loaded.
+2024-10-25 22:45:45,244 - INFO - All commands registered.
+2024-10-25 22:45:45,245 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:45,261 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:45:45,262 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:45:45,271 - INFO - The directory './data' was created.
+2024-10-25 22:45:45,272 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:45,275 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:45,279 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:45,279 - WARNING - No grades found to add to the calculator.
+2024-10-25 22:45:45,281 - INFO - The directory './data' was created.
+2024-10-25 22:45:45,281 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:45:45,283 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:52:11,391 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:52:11,392 - INFO - Environment variables loaded.
+2024-10-25 22:52:11,394 - INFO - All commands registered.
+2024-10-25 22:52:11,399 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:52:11,400 - INFO - Exiting REPL.
+2024-10-25 22:52:11,403 - INFO - Calculator value reset to 0.
+2024-10-25 22:52:11,403 - INFO - Exiting REPL.
+2024-10-25 22:52:11,480 - INFO - Calculator values saved to CSV at '/private/var/folders/p2/lcgk9hsj0830znmk7mjn_hvm0000gn/T/pytest-of-liviali/pytest-136/test_save_calculator_values0/test_calc_values_export.csv'.
+2024-10-25 22:52:11,484 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:52:11,486 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:52:11,486 - INFO - Exiting REPL.
+2024-10-25 22:52:11,492 - INFO - Environment variables loaded.
+2024-10-25 22:52:11,501 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:52:11,501 - INFO - Environment variables loaded.
+2024-10-25 22:52:11,502 - INFO - All commands registered.
+2024-10-25 22:52:11,503 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:52:11,505 - INFO - Calculator value reset to 0.
+2024-10-25 22:52:11,505 - INFO - Calculator value reset to 0.
+2024-10-25 22:52:11,505 - INFO - Calculator value reset to 0.
+2024-10-25 22:52:11,510 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:52:11,511 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:52:11,520 - INFO - The directory './data' was created.
+2024-10-25 22:52:11,521 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:52:11,524 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:52:11,527 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:52:11,527 - WARNING - No grades found to add to the calculator.
+2024-10-25 22:52:11,529 - INFO - The directory './data' was created.
+2024-10-25 22:52:11,530 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:52:11,534 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:53:15,905 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:53:15,906 - INFO - Environment variables loaded.
+2024-10-25 22:53:15,909 - INFO - All commands registered.
+2024-10-25 22:53:15,913 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:53:15,914 - INFO - Exiting REPL.
+2024-10-25 22:53:15,918 - INFO - Calculator value reset to 0.
+2024-10-25 22:53:15,919 - INFO - Exiting REPL.
+2024-10-25 22:53:16,002 - INFO - Calculator values saved to CSV at '/private/var/folders/p2/lcgk9hsj0830znmk7mjn_hvm0000gn/T/pytest-of-liviali/pytest-137/test_save_calculator_values0/test_calc_values_export.csv'.
+2024-10-25 22:53:16,004 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:53:16,006 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:53:16,006 - INFO - Exiting REPL.
+2024-10-25 22:53:16,013 - INFO - Environment variables loaded.
+2024-10-25 22:53:16,021 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:53:16,021 - INFO - Environment variables loaded.
+2024-10-25 22:53:16,022 - INFO - All commands registered.
+2024-10-25 22:53:16,023 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:53:16,025 - INFO - Calculator value reset to 0.
+2024-10-25 22:53:16,025 - INFO - Calculator value reset to 0.
+2024-10-25 22:53:16,025 - INFO - Calculator value reset to 0.
+2024-10-25 22:53:16,031 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:53:16,033 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:53:16,040 - INFO - The directory './data' was created.
+2024-10-25 22:53:16,041 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:53:16,045 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:53:16,049 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:53:16,050 - WARNING - No grades found to add to the calculator.
+2024-10-25 22:53:16,051 - INFO - The directory './data' was created.
+2024-10-25 22:53:16,052 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:53:16,054 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:54:41,003 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:54:41,004 - INFO - Environment variables loaded.
+2024-10-25 22:54:41,007 - INFO - All commands registered.
+2024-10-25 22:54:41,012 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:54:41,013 - INFO - Exiting REPL.
+2024-10-25 22:54:41,016 - INFO - Calculator value reset to 0.
+2024-10-25 22:54:41,017 - INFO - Exiting REPL.
+2024-10-25 22:54:41,095 - INFO - Calculator values saved to CSV at '/private/var/folders/p2/lcgk9hsj0830znmk7mjn_hvm0000gn/T/pytest-of-liviali/pytest-138/test_save_calculator_values0/test_calc_values_export.csv'.
+2024-10-25 22:54:41,101 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:54:41,103 - INFO - Calculator values saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:54:41,103 - INFO - Exiting REPL.
+2024-10-25 22:54:41,110 - INFO - Environment variables loaded.
+2024-10-25 22:54:41,113 - DEBUG - Logging configured. Level: DEBUG, File: ./app.log
+2024-10-25 22:54:41,113 - INFO - Environment variables loaded.
+2024-10-25 22:54:41,114 - INFO - All commands registered.
+2024-10-25 22:54:41,115 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:54:41,118 - INFO - Calculator value reset to 0.
+2024-10-25 22:54:41,118 - INFO - Calculator value reset to 0.
+2024-10-25 22:54:41,118 - INFO - Calculator value reset to 0.
+2024-10-25 22:54:41,124 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:54:41,125 - INFO - Welcome! You can start by entering data for 'class1' or 'class2' using the 'grades' command.
+2024-10-25 22:54:41,135 - INFO - The directory './data' was created.
+2024-10-25 22:54:41,137 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:54:41,142 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:54:41,145 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:54:41,145 - WARNING - No grades found to add to the calculator.
+2024-10-25 22:54:41,147 - INFO - The directory './data' was created.
+2024-10-25 22:54:41,147 - INFO - Grades saved to CSV at './data/grades_export.csv'.
+2024-10-25 22:54:41,151 - INFO - Grades saved to CSV at './data/grades_export.csv'.
