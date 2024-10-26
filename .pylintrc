@@ -11,7 +11,8 @@ disable= unused-argument,
          line-too-long,
          redefined-outer-name,
          missing-module-docstring,
-         trailing-whitespace
+         trailing-whitespace,
+         missing-function-docstring
 
 
 [REPORTS]

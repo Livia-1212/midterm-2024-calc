@@ -39,8 +39,8 @@ class DivideCommand(Command):
         self.value = value
 
     def execute(self):
-        result = self.calculator.divide_value(self.value)
-        if result == "Error: Division by zero":
-            return result
+        if self.value == 0:
+            return "Error: Division by zero"
+        self.calculator.divide_value(self.value)
         return self.calculator.value
 

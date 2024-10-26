@@ -20,31 +20,19 @@ class CommandHandler:
         self.commands[command_name.lower()] = command_class  # Use lowercase for consistency
 
     def execute_command(self, command_name, command_value=None):
-        """
-        Execute a registered command using the command name and optional value.
-        """
-        command_name = command_name.lower()
-
-        # Check if the command exists in the registry
+        """Execute a registered command by its name and optional value."""
         if command_name not in self.commands:
             print(f"Error: Command '{command_name}' not found.")
             return None
 
+        # Get the command class
         command_class = self.commands[command_name]
 
-        # Handle commands that do not require arguments
-        if command_class.__name__ in ["GreetCommand", "ResetCommand"]:
-            command = command_class()
-        elif command_value is not None:
+        # Create and execute the command
+        if command_value is not None:
             command = command_class(self.calculator, command_value)
         else:
             command = command_class(self.calculator)
 
-        # Execute the command and return the result
-        try:
-            return command.execute()
-        except ValueError as ve:
-            print(f"Value Error: {ve}")
-        except Exception as e:
-            print(f"Unexpected Error: {e}")
-            return None
+        return command.execute()
+

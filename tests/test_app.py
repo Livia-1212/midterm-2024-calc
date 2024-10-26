@@ -64,15 +64,24 @@ def test_handle_special_commands(app_instance):
 def test_calculator_commands(app_instance, command, initial, expected):
     """Test calculator commands (add, subtract, multiply, divide)."""
     app_instance.calculator.value = initial
-    app_instance.command_handler.execute_command(command)
-    assert app_instance.calculator.value == expected, f"Command '{command}' failed."
 
+    # Split command to separate name and value
+    parts = command.split()
+    command_name = parts[0]
+    command_value = float(parts[1])
+
+    # Execute command with the extracted value
+    app_instance.command_handler.execute_command(command_name, command_value)
+
+    # Check if the calculator value matches the expected result
+    assert app_instance.calculator.value == expected, f"Command '{command}' failed."
 
 def test_division_by_zero(app_instance):
     """Test division by zero."""
     app_instance.calculator.value = 10
-    result = app_instance.command_handler.execute_command("divide 0")
+    result = app_instance.command_handler.execute_command("divide", 0)
     assert result == "Error: Division by zero", "Division by zero error not raised."
+
 
 
 def test_mean_command(app_instance):
@@ -197,15 +206,18 @@ def test_load_environment_variables(app_instance, monkeypatch):
 
 
 
+def dummy_command():
+    return "dummy"
+
 def test_command_registration(app_instance):
     """Test registering the same command twice."""
     command_name = "test_command"
-    dummy_command = lambda: "dummy"
 
     app_instance.command_handler.register_command(command_name, dummy_command)
     app_instance.command_handler.register_command(command_name, dummy_command)
 
     assert command_name in app_instance.command_handler.commands, "Command not registered."
+
 
 
 def test_calculator_addition(app_instance):
